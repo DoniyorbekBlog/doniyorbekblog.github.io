@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D8 Python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Regenarating new codes by using old one</h1>
+
+    <p>From now on, I will focus on problem-solving skills. I will learn regenerating better codes instead of casual codes. <br>
+        And I think it is much more beneficial and good for me, instead of finding new things</p>
+
+    <b>Problem:</b>
+    <pre><i>Return the number (count) of vowels in the given string.
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+The input string will only consist of lower case letters and/or spaces.</i>
+    </pre>
+
+    <p><b>And my solution at the beginning:</b></p>
+
+    <pre><code>
+target = "aeiou"
+def counter(string):
+    counter = 0
+    for letter in string:
+        if letter in target:
+            counter += 1
+    return counter
+    </code></pre>
+
+    <p>Actually it is corrected, but if i continue writing codes like this, consequence will not be good! <br>
+    That's why I started regenerating my codes so that it must be professional</p>
+
+    <b>My best solution:</b>
+    <pre><code>def counter(string):
+    return len([letter for letter in string if letter in "aeiou"])
+    </code></pre>
+</div>
+
+</body>
+</html>
