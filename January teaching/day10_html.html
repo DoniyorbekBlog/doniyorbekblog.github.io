@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding HSL Colors</title>
+    <link rel="stylesheet" href="day10_html.css">
+</head>
+<body>
+
+<header>
+    <h1>Understanding HSL Color Model</h1>
+    <p class="subtitle">A concise guide with examples & reference</p>
+</header>
+
+<section class="content">
+
+    <h2>What is HSL?</h2>
+    <p>
+        HSL stands for <strong>Hue</strong>, <strong>Saturation</strong>, and <strong>Lightness</strong>. 
+        It is a modern and intuitive way to define colors in CSS.  
+    </p>
+
+    <ul class="definition">
+        <li><strong>Hue</strong>: the color type (0–360 degrees on the color wheel).</li>
+        <li><strong>Saturation</strong>: intensity of color (0% gray to 100% full color).</li>
+        <li><strong>Lightness</strong>: brightness (0% black, 50% normal, 100% white).</li>
+    </ul>
+
+    <div class="color-blocks">
+        <div class="block" style="background-color: hsl(0, 100%, 50%);">
+            <p>hsl(0, 100%, 50%) – Red</p>
+        </div>
+        <div class="block" style="background-color: hsl(120, 100%, 40%);">
+            <p>hsl(120, 100%, 40%) – Green</p>
+        </div>
+        <div class="block" style="background-color: hsl(240, 100%, 50%);">
+            <p>hsl(240, 100%, 50%) – Blue</p>
+        </div>
+    </div>
+
+    <h2>Changing Saturation</h2>
+    <p>Saturation controls how “strong” or “weak” a color is.</p>
+
+    <div class="color-row">
+        <div style="background:hsl(200, 100%, 50%);"><span>100% Sat</span></div>
+        <div style="background:hsl(200, 60%, 50%);"><span>60% Sat</span></div>
+        <div style="background:hsl(200, 30%, 50%);"><span>30% Sat</span></div>
+        <div style="background:hsl(200, 0%, 50%);"><span>0% Sat</span></div>
+    </div>
+
+    <h2>Changing Lightness</h2>
+    <p>Lightness makes the color brighter or darker.</p>
+
+    <div class="color-row">
+        <div style="background:hsl(30, 100%, 20%);"><span>20% Light</span></div>
+        <div style="background:hsl(30, 100%, 40%);"><span>40% Light</span></div>
+        <div style="background:hsl(30, 100%, 60%);"><span>60% Light</span></div>
+        <div style="background:hsl(30, 100%, 80%);"><span>80% Light</span></div>
+    </div>
+
+    <h2>Reference</h2>
+    <p class="reference">
+        Source: <a href="https://www.w3schools.com/html/html_colors_hsl.asp" target="_blank">
+        W3Schools – HTML HSL Colors
+        </a>
+    </p>
+
+</section>
+
+<footer>
+    <p>Created for daily learning practice.</p>
+</footer>
+
+</body>
+</html>
