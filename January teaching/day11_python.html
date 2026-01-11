@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Python Solutions</title>
+    <link rel="stylesheet" href="day11_python.css">
+</head>
+<body>
+
+<header>
+    <h1>Daily Python Challenges – Solutions & Explanations</h1>
+</header>
+
+<section class="problem">
+    <h2>Problem 1: Square Sum Function</h2>
+
+    <p class="statement">
+        Complete the square sum function so that it squares each number in the list and returns the sum of the squared values.
+        Example: for <strong>[1, 2, 2]</strong>, the result is <strong>9</strong> because 1² + 2² + 2² = 9.
+    </p>
+
+    <h3>My Solution</h3>
+    <pre><code>
+def square_sum(numbers):
+    result = 0
+    for i in numbers:
+        result += i*i
+    return result
+    </code></pre>
+
+    <h3>Best Solution</h3>
+    <pre><code>
+def square_sum(numbers):
+    return sum(x ** 2 for x in numbers)
+    </code></pre>
+
+    <h3>Detailed Explanation</h3>
+    <div class="explanation">
+        <p>
+            My approach is fully correct: I initialize a variable <code>result</code>, iterate through each number,
+            square it, and accumulate the sum. This is a classic, explicit way to solve the problem, and it clearly shows
+            the logic step by step. It is especially readable for beginners.
+        </p>
+
+        <p>
+            The best solution is more compact and uses Python’s built-in <code>sum()</code> function together with a 
+            generator expression: <code>(x ** 2 for x in numbers)</code>. This allows Python to compute each squared number
+            lazily and then feed it directly into the summing process. As a result, the final code becomes shorter,
+            cleaner, and more “Pythonic,” while still remaining very readable.
+        </p>
+
+        <p>
+            From a performance perspective, both solutions run with the same time complexity. However, the best solution
+            avoids manual variable updates, reduces boilerplate, and follows modern Python idioms used in professional code.
+        </p>
+    </div>
+</section>
+
+
+<section class="problem">
+    <h2>Problem 2: Rearrange Digits in Descending Order</h2>
+
+    <p class="statement">
+        Create a function that takes any non-negative integer and returns a new integer with its digits arranged
+        in descending order. This creates the highest possible value from those digits.
+    </p>
+
+    <p class="examples">
+        Examples:<br>
+        Input: 42145 → Output: 54421<br>
+        Input: 145263 → Output: 654321<br>
+        Input: 123456789 → Output: 987654321
+    </p>
+
+    <h3>My Solution</h3>
+    <pre><code>
+def descending_order(num):
+    num_list = list(str(num))
+    num_list.sort(reverse=True)
+    return int("".join(num_list))
+    </code></pre>
+
+    <h3>Important Note</h3>
+    <pre><code>
+I cannot use:
+    sorted_list = num_list.sort()
+
+Because .sort() returns None.
+Always sort the list first, THEN use it.
+    </code></pre>
+
+    <h3>Detailed Explanation</h3>
+
+    <div class="explanation">
+        <p>
+            My solution follows the correct sequence of steps: convert the number into a list of its digits, sort that
+            list in descending order, and then join the digits back into a string before converting it to an integer.
+            This method is clear, explicit, and easy to understand while still being efficient.
+        </p>
+
+        <p>
+            A key detail is the behavior of the <code>.sort()</code> method. In Python, <code>.sort()</code> modifies the
+            list in place and returns <strong>None</strong>. This means I cannot write:
+        </p>
+
+        <pre><code>
+num_list = list(str(num))
+sorted_list = num_list.sort(reverse=True)  # WRONG
+        </code></pre>
+
+        <p>
+            Such code results in <code>sorted_list</code> being <strong>None</strong>, which will cause errors later.
+            I correctly handled this by calling <code>.sort()</code> directly on the list and then using that list immediately.
+        </p>
+
+        <p>
+            Python also provides a functional alternative using <code>sorted()</code>, which returns a new list instead
+            of modifying the original. The more compact variant would be:
+        </p>
+
+        <pre><code>
+def descending_order(num):
+    return int("".join(sorted(str(num), reverse=True)))
+        </code></pre>
+
+        <p>
+            This version is more concise and often considered more Pythonic. However, My version gives learners a clearer
+            view of the underlying steps, so both are valid depending on the teaching goal.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    <p>Posted for my daily Python subscribers.</p>
+</footer>
+
+</body>
+</html>
