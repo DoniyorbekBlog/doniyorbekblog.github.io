@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaden Case Kata – Daily Python Solutions</title>
+    <link rel="stylesheet" href="day15_python.css">
+</head>
+<body>
+
+<header>
+    <h1>Daily Python Challenge</h1>
+    <h2>Kata: Converting Strings to JadenCase</h2>
+</header>
+
+<section class="description">
+    <h3>Description of the Problem</h3>
+    <p>
+        Jaden Smith, the son of actor Will Smith, is widely recognized not only for his film roles 
+        in movies like <em>The Karate Kid</em> (2010) and <em>After Earth</em> (2013), but also for his 
+        unusual style of writing on social media. One of the most distinctive traits in his Tweets 
+        is that he capitalizes Every Single Word, regardless of grammatical rules.
+    </p>
+
+    <p>
+        The goal of this kata is to transform any given string into the same style. This format is 
+        commonly referred to as <strong>JadenCase</strong>. Every word must begin with an uppercase 
+        letter while the rest remains lowercase. Contractions such as <code>aren't</code> must remain intact 
+        while still having the first letter capitalized (<code>Aren't</code>).
+    </p>
+
+    <p><strong>Example:</strong></p>
+    <pre>
+Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+    </pre>
+</section>
+
+<section class="solutions">
+    <h3>My Solution</h3>
+    <pre>
+def to_jaden_case(string):
+    return " ".join([word.capitalize() for word in string.split()])
+    </pre>
+
+    <h3>Best Solution</h3>
+    <pre>
+def to_jaden_case(string):
+    return string.title()
+    </pre>
+</section>
+
+<section class="explanation">
+    <h3>Detailed Explanation and Comparison</h3>
+    <p>
+        Both solutions correctly convert sentences into JadenCase, but they differ in how they handle 
+        capitalization and how they operate under the hood. Your solution uses a more explicit and 
+        deliberate approach: it splits the string into words manually, capitalizes each word 
+        individually using <code>capitalize()</code>, and then reconstructs the sentence with <code>join()</code>. 
+        This is a clean and very readable method because the transformation is performed step by step.
+    </p>
+
+    <p>
+        The best solution takes advantage of Python's built-in <code>title()</code> method, which was designed 
+        to convert strings so that every word begins with an uppercase letter and the remainder becomes 
+        lowercase automatically. This produces the same result in a shorter and more concise form.
+    </p>
+
+    <p>
+        However, it’s worth noting a subtle detail: <code>title()</code> can behave differently with special cases, 
+        such as words containing apostrophes. For standard English contractions like “aren’t,” both 
+        solutions behave identically, but in more complex strings, <code>title()</code> may split words in ways 
+        you do not expect. Despite that, for this kata and ordinary sentences, the <code>title()</code> 
+        implementation is perfectly suitable and highly efficient.
+    </p>
+
+    <p>
+        Overall, your solution is explicit, transparent, and instructional, while the best solution 
+        is minimalistic, built-in, and optimized. Both pass the kata, but <code>title()</code> is often preferred 
+        for its simplicity and speed.
+    </p>
+</section>
+
+</body>
+</html>
