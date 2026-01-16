@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python sorted() Function – Full Guide</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #0f1016;
+        color: #e6e6e6;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.7;
+    }
+
+    header {
+        background: #1c1f2b;
+        padding: 25px;
+        text-align: center;
+        color: #00eaff;
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #00eaff;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .card {
+        background: #1b1d29;
+        border: 1px solid #2d2f3c;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 25px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        border-color: #00eaff;
+        box-shadow: 0 0 12px #00eaff55;
+    }
+
+    h2 {
+        color: #00eaff;
+        margin-top: 0;
+    }
+
+    .code {
+        background: #11131b;
+        border-left: 4px solid #00eaff;
+        padding: 15px;
+        font-family: Consolas, monospace;
+        white-space: pre-wrap;
+        overflow-x: auto;
+        border-radius: 6px;
+        margin-top: 10px;
+        color: #00ffbf;
+    }
+
+    ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+        color: #888;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>Python <code>sorted()</code> Function — Complete Guide</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>1. What is <code>sorted()</code>?</h2>
+        <p>The <b>sorted()</b> function returns a new list with items in sorted order.  
+        It does <b>not change the original object</b>.</p>
+
+        <div class="code">
+numbers = [4, 1, 6, 2]
+result = sorted(numbers)
+print(result)      # [1, 2, 4, 6]
+print(numbers)     # Original list stays unchanged
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>2. Syntax</h2>
+        <div class="code">
+sorted(iterable, *, key=None, reverse=False)
+        </div>
+
+        <h3>Parameters:</h3>
+        <ul>
+            <li><b>iterable</b> — list, tuple, string, dictionary keys, etc.</li>
+            <li><b>key</b> — function to customize sorting (very powerful)</li>
+            <li><b>reverse</b> — sort descending when True</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>3. Sorting Strings</h2>
+        <div class="code">
+print(sorted("python"))
+# ['h', 'n', 'o', 'p', 't', 'y']
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>4. reverse=True (Descending Order)</h2>
+        <div class="code">
+nums = [3, 9, 1, 5]
+print(sorted(nums, reverse=True))
+# [9, 5, 3, 1]
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>5. key= — Custom Sorting Rules</h2>
+        <p>You can sort using your own logic.</p>
+
+        <h3>Sort by length of each word:</h3>
+        <div class="code">
+words = ["apple", "hi", "banana", "yes"]
+print(sorted(words, key=len))
+# ['hi', 'yes', 'apple', 'banana']
+        </div>
+
+        <h3>Sort ignoring case:</h3>
+        <div class="code">
+names = ["Bob", "alice", "Steve", "john"]
+print(sorted(names, key=str.lower))
+# ['alice', 'Bob', 'john', 'Steve']
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>6. Sorting Complex Objects</h2>
+        <p>Sort a list of dictionaries by age:</p>
+
+        <div class="code">
+people = [
+    {"name": "Ali", "age": 19},
+    {"name": "John", "age": 25},
+    {"name": "Tim", "age": 17}
+]
+
+sorted_people = sorted(people, key=lambda p: p["age"])
+print(sorted_people)
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>7. Sorting Tuples</h2>
+        <p>Sort by second element:</p>
+        <div class="code">
+pairs = [(2, 5), (1, 9), (4, 3)]
+sorted_pairs = sorted(pairs, key=lambda x: x[1])
+print(sorted_pairs)
+# [(4, 3), (2, 5), (1, 9)]
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>8. Sorting a Dictionary</h2>
+        <p>Sort dictionary keys:</p>
+        <div class="code">
+d = {"b": 2, "c": 1, "a": 3}
+print(sorted(d))
+# ['a', 'b', 'c']
+        </div>
+
+        <p>Sort by dictionary values:</p>
+        <div class="code">
+print(sorted(d, key=lambda k: d[k]))
+# ['c', 'b', 'a']
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>9. Sorting Numbers Stored as Strings</h2>
+        <div class="code">
+data = ["1", "100", "12", "5"]
+print(sorted(data))
+# ['1', '100', '12', '5'] (string order)
+
+print(sorted(data, key=int))
+# ['1', '5', '12', '100'] (numeric order)
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">Created for Python Learning • sorted() Deep Explanation</div>
+
+</body>
+</html>
