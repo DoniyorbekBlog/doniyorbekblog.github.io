@@ -1,24 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doniyorbek's Premium Blog | Explore the Future</title>
+    <meta name="description" content="A state-of-the-art interactive blog showcasing modern web design and deep insights.">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="glass">
+      <div class="nav-content">
+        <div class="logo">DONIYORBEK.</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="cta-button" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">Subscribe</button>
+      </div>
+    </nav>
 
-  <title>Doniyorbek</title>
-  <style>
-    
-  </style>
-</head>
-<body>
-  <img src="my_pic.jpg"
-  alt="Doniyorbek" 
-  style="width:200px; height:200px; border-radius:50%; object-fit:cover; display:block; margin:auto;">
-  <h1 style="text-align:center">Doniyorbek Xasanov</h1>
-  <p>
-I am a first-year Software Engineering student with a strong interest in programming and problem solving.
-I am currently learning the fundamentals of software development and continuously improving my technical and analytical skills.
-  </p>
-  <a href="./January teaching/january_teaching.html">January teaching</a>
+    <main>
+      <section id="home" class="hero">
+        <h1 class="fade-in">Exploring the <span>Digital Frontier</span></h1>
+        <p class="fade-in" style="animation-delay: 0.2s;">Insights into advanced coding, agentic AI, and the future of web development. Handcrafted with passion and precision.</p>
+        <div class="fade-in" style="animation-delay: 0.4s;">
+          <button class="cta-button">Read Latest Posts</button>
+        </div>
+      </section>
 
-  
-</body>
+      <section id="blog" class="blog-section">
+        <div class="feed-header">
+          <h2>Latest Insights</h2>
+          <div class="search-bar glass" style="padding: 0.5rem 1rem; border-radius: 50px; display: flex; align-items: center;">
+            <input type="text" id="blog-search" placeholder="Search insights..." style="background: transparent; border: none; color: white; outline: none; margin-left: 0.5rem;">
+          </div>
+        </div>
+        
+        <div id="blog-grid" class="blog-grid">
+          <!-- Blog posts will be injected here by JS -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="glass" style="margin: 4rem 5% 2rem; padding: 3rem; text-align: center;">
+      <div class="logo" style="margin-bottom: 1rem;">DONIYORBEK.</div>
+      <p style="color: var(--text-secondary);">&copy; 2026 Doniyorbek Blog. Built with Vite & Passion.</p>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
